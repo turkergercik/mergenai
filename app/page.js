@@ -58,20 +58,22 @@ export default function Chat() {
         </div>
   
         {/* Chat Area */}
-        <div className="flex-1 flex flex-col-reverse p-4  overflow-y-auto space-y-1">
-          {messages.map((message, index) => (
-            <div
-              key={index}
-              className={`max-w-sm px-4 py-3 rounded-full shadow ${
-                message.type === "user"
-                  ? "ml-auto bg-neutral-800 text-neutral-100"
-                  : "bg-neutral-700 text-neutral-300"
-              }`}
-            >
-              {message.text}
-            </div>
-          ))}
-        </div>
+        <div className="flex-1 flex flex-col-reverse p-4 gap-1 overflow-y-auto">
+  {messages.map((message, index) => (
+    <div
+      key={index}
+      className={`px-4 py-2  rounded-xl flex flex-grow-0 text-wrap max-w-[100%] ${
+        message.type === "user"
+          ? "ml-auto bg-neutral-800 text-neutral-100"
+          : "bg-neutral-700 text-neutral-300 mr-auto"
+      }`}
+     
+    >
+      {message.text}
+    </div>
+  ))}
+</div>
+
         {/*settings*/}
         <div onClick={()=>setIsOpen(!isOpen)} className={`fixed z-0 top-0 right-0 left-0 bottom-0 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
