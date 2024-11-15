@@ -3,6 +3,7 @@ import { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import { FaStop } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { TonConnectButton } from "@tonconnect/ui-react";
 export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -39,6 +40,7 @@ export default function Chat() {
         <h1 className="text-xl font-semibold tracking-widest text-neutral-100">
           AI Chat
         </h1>
+        <TonConnectButton></TonConnectButton>
         <button className="text-sm font-medium text-neutral-400 hover:text-neutral-300 transition">
         <RxHamburgerMenu size={30} />
         </button>
