@@ -93,7 +93,10 @@ export default function Chat() {
           <IoIosCloseCircleOutline size={30} />
         </button>
         <div className="  w-full flex justify-center  ">
-          <button onClick={async()=>{await tonConnectUI.disconnect()}}>
+          <button onClick={async()=>{
+            setIsOpen(false)
+            await tonConnectUI.disconnect()
+          }}>
           <FiLogOut size={30} />
           </button>
         
